@@ -36,11 +36,11 @@ class OrdersListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "OrderCellIdentifier", for: indexPath) as! OrderCell
         
-//       let order = orders[indexPath.row] as Order
-//        cell.startTime?.text = order.startTime
-//        cell.workType?.text = order.workType
-        //cell.customerName?.text = order.customerName
-        //cell.customerAddress?.text = order.customerAddress
+       let order = orders[indexPath.row] as Order
+        cell.startTime?.text = order.startTime
+        cell.workType?.text = order.workType
+        cell.customerName?.text = order.customerName
+        cell.customerAddress?.text = order.customerAddress
 
       return cell
     }

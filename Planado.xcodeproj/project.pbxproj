@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		CE1602DF1F82DE8300A9E39B /* OrdersListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1602DE1F82DE8300A9E39B /* OrdersListTableViewController.swift */; };
 		CE1602E31F83281F00A9E39B /* OrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1602E21F83281F00A9E39B /* OrderCell.swift */; };
+		CE1603071F83FAD000A9E39B /* location48.png in Resources */ = {isa = PBXBuildFile; fileRef = CE1603061F83FAD000A9E39B /* location48.png */; };
+		CE50295F1F8404E10091381C /* home4x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE50295B1F8404E10091381C /* home4x.png */; };
+		CE5029601F8404E10091381C /* bell4x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE50295C1F8404E10091381C /* bell4x.png */; };
+		CE5029611F8404E10091381C /* settings4x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE50295D1F8404E10091381C /* settings4x.png */; };
+		CE5029621F8404E10091381C /* single4x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE50295E1F8404E10091381C /* single4x.png */; };
 		CE6E2EBF1F7AAF7B004CF67F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E2EBE1F7AAF7B004CF67F /* AppDelegate.swift */; };
 		CE6E2EC11F7AAF7B004CF67F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E2EC01F7AAF7B004CF67F /* LoginViewController.swift */; };
 		CE6E2EC41F7AAF7B004CF67F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE6E2EC21F7AAF7B004CF67F /* Main.storyboard */; };
@@ -23,6 +28,11 @@
 /* Begin PBXFileReference section */
 		CE1602DE1F82DE8300A9E39B /* OrdersListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersListTableViewController.swift; sourceTree = "<group>"; };
 		CE1602E21F83281F00A9E39B /* OrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCell.swift; sourceTree = "<group>"; };
+		CE1603061F83FAD000A9E39B /* location48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = location48.png; sourceTree = "<group>"; };
+		CE50295B1F8404E10091381C /* home4x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home4x.png; sourceTree = "<group>"; };
+		CE50295C1F8404E10091381C /* bell4x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bell4x.png; sourceTree = "<group>"; };
+		CE50295D1F8404E10091381C /* settings4x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings4x.png; sourceTree = "<group>"; };
+		CE50295E1F8404E10091381C /* single4x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = single4x.png; sourceTree = "<group>"; };
 		CE6E2EBB1F7AAF7B004CF67F /* Planado.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Planado.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE6E2EBE1F7AAF7B004CF67F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE6E2EC01F7AAF7B004CF67F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -91,6 +101,11 @@
 		CE6E9A151F7C70DD00967923 /* Pictures */ = {
 			isa = PBXGroup;
 			children = (
+				CE50295C1F8404E10091381C /* bell4x.png */,
+				CE50295B1F8404E10091381C /* home4x.png */,
+				CE50295D1F8404E10091381C /* settings4x.png */,
+				CE50295E1F8404E10091381C /* single4x.png */,
+				CE1603061F83FAD000A9E39B /* location48.png */,
 				CE6E9A171F7C70FA00967923 /* logo.png */,
 				CE6E9A161F7C70FA00967923 /* logohead.png */,
 				CE6E9A181F7C70FA00967923 /* logosquare.png */,
@@ -157,7 +172,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE1603071F83FAD000A9E39B /* location48.png in Resources */,
+				CE5029621F8404E10091381C /* single4x.png in Resources */,
 				CE6E2EC91F7AAF7B004CF67F /* LaunchScreen.storyboard in Resources */,
+				CE5029601F8404E10091381C /* bell4x.png in Resources */,
+				CE50295F1F8404E10091381C /* home4x.png in Resources */,
+				CE5029611F8404E10091381C /* settings4x.png in Resources */,
 				CE6E9A1A1F7C70FA00967923 /* logo.png in Resources */,
 				CE6E2EC61F7AAF7B004CF67F /* Assets.xcassets in Resources */,
 				CE6E9A1B1F7C70FA00967923 /* logosquare.png in Resources */,
