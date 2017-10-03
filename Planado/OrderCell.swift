@@ -12,6 +12,8 @@ class OrderCell: UITableViewCell {
 
     @IBOutlet weak var startTime: UITextView!
     @IBOutlet weak var workType: UITextView!
+    @IBOutlet weak var customerName: UITextView!
+    @IBOutlet weak var customerAddress: UITextView!
     
     
 }
