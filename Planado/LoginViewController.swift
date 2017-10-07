@@ -9,8 +9,6 @@
 import UIKit
 
 
-
-
 class LoginViewController: UIViewController {
 
     @IBOutlet weak var loginText: UITextField!
@@ -19,11 +17,9 @@ class LoginViewController: UIViewController {
     @IBAction func loginButton(_ sender: Any) {
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }
-
+    override func viewWillAppear(_ animated: Bool) {
+        currentDate = GetCurrentDate()
+       }
 
 }
 
