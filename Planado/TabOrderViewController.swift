@@ -12,11 +12,8 @@ class TabOrderViewController: UIViewController {
 
     @IBOutlet weak var startButton: BorderedButton!
     @IBOutlet weak var finishButton: BorderedButton!
-    
     @IBOutlet weak var orderTime: BorderedLabel!
     @IBOutlet weak var orderAccomplishedStatus: BorderedLabel!
-    
-   
     
     @IBAction func startButtonPressed(_ sender: Any) {
         
@@ -31,9 +28,11 @@ class TabOrderViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
 
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        
+    }
 
 
 }
