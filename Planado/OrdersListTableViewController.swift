@@ -135,6 +135,7 @@ class OrdersListTableViewController: UITableViewController {
         cell.workType?.text = order.workType
         cell.customerName?.text = order.customerName
         cell.customerAddress?.text = order.customerAddress
+        cell.customerPhone?.text = order.customerPhone
         
         return cell
     }

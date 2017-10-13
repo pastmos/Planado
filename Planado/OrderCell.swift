@@ -14,6 +14,6 @@ class OrderCell: UITableViewCell {
     @IBOutlet weak var workType: UITextView!
     @IBOutlet weak var customerName: UITextView!
     @IBOutlet weak var customerAddress: UITextView!
-    
-    
+    @IBOutlet weak var customerPhone: UITextView!
+
 }

@@ -118,9 +118,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="24.375" y="31.690140845070424"/>
+            <point key="canvasLocation" x="-193" y="32"/>
         </scene>
-        <!--Список нарядов-->
+        <!--Наряды-->
         <scene sceneID="qmZ-kp-f5O">
             <objects>
                 <tableViewController id="yJM-Il-FLe" customClass="OrdersListTableViewController" customModule="Planado" customModuleProvider="target" sceneMemberID="viewController">
@@ -129,11 +129,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="OrderCellIdentifier" rowHeight="185" id="15r-Tq-cOD" customClass="OrderCell" customModule="Planado" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="320" height="185"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="OrderCellIdentifier" rowHeight="197" id="15r-Tq-cOD" customClass="OrderCell" customModule="Planado" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="320" height="197"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="15r-Tq-cOD" id="1ON-4h-lwf">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="184.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="196.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" editable="NO" text="aaaaaaaaaaaaaaaaa" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VhV-sP-v8d">
@@ -170,6 +170,9 @@
                                         <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" scrollEnabled="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="J8o-8H-6a6">
                                             <rect key="frame" x="32" y="121" width="280" height="34"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="280" id="v1w-HE-HAN"/>
+                                            </constraints>
                                             <string key="text">dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</string>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -203,17 +206,37 @@
                                                 <constraint firstAttribute="width" constant="22" id="Rxl-hh-ITZ"/>
                                             </constraints>
                                         </imageView>
+                                        <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" scrollEnabled="NO" editable="NO" text="eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="96S-Gz-LP3">
+                                            <rect key="frame" x="32" y="157" width="280" height="27"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="280" id="EnB-J7-7Qw"/>
+                                            </constraints>
+                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="phone.png" translatesAutoresizingMaskIntoConstraints="NO" id="hJj-wp-p59">
+                                            <rect key="frame" x="7" y="162" width="20" height="22"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="22" id="6no-Uc-RZT"/>
+                                                <constraint firstAttribute="width" constant="20" id="e7z-51-yGJ"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="96S-Gz-LP3" secondAttribute="bottom" constant="12.5" id="2CU-Kz-qGO"/>
                                         <constraint firstItem="KaN-UA-U3A" firstAttribute="leading" secondItem="JRM-WV-u6v" secondAttribute="trailing" constant="6" id="3R0-KQ-lAu"/>
                                         <constraint firstItem="skT-NS-6iu" firstAttribute="leading" secondItem="ujJ-oF-gAf" secondAttribute="trailing" constant="6" id="4gu-7X-ibr"/>
                                         <constraint firstItem="JRM-WV-u6v" firstAttribute="top" secondItem="VhV-sP-v8d" secondAttribute="bottom" constant="13" id="5ei-Hz-bvM"/>
                                         <constraint firstItem="ujJ-oF-gAf" firstAttribute="leading" secondItem="1ON-4h-lwf" secondAttribute="leading" constant="8" id="6h6-GH-N9K"/>
+                                        <constraint firstItem="96S-Gz-LP3" firstAttribute="top" secondItem="J8o-8H-6a6" secondAttribute="bottom" constant="2" id="7zr-Ap-6bI"/>
                                         <constraint firstItem="GQe-pH-fpX" firstAttribute="top" secondItem="skT-NS-6iu" secondAttribute="bottom" constant="7" id="F0Y-b5-b2B"/>
                                         <constraint firstItem="0bB-fB-mdG" firstAttribute="leading" secondItem="1ON-4h-lwf" secondAttribute="leading" constant="8" id="G94-vZ-Ag1"/>
+                                        <constraint firstItem="hJj-wp-p59" firstAttribute="leading" secondItem="1ON-4h-lwf" secondAttribute="leading" constant="7" id="NwX-v6-qLn"/>
+                                        <constraint firstItem="hJj-wp-p59" firstAttribute="top" secondItem="J8o-8H-6a6" secondAttribute="bottom" constant="12" id="Omg-7v-vQe"/>
                                         <constraint firstAttribute="trailing" secondItem="J8o-8H-6a6" secondAttribute="trailing" constant="8" id="QOd-zq-Ut6"/>
                                         <constraint firstAttribute="trailing" secondItem="skT-NS-6iu" secondAttribute="trailing" constant="8" id="axj-A1-z4N"/>
-                                        <constraint firstAttribute="bottom" secondItem="J8o-8H-6a6" secondAttribute="bottom" constant="29.5" id="dmC-mo-acM"/>
                                         <constraint firstItem="JRM-WV-u6v" firstAttribute="leading" secondItem="1ON-4h-lwf" secondAttribute="leading" constant="8" id="f6I-6t-q5A"/>
                                         <constraint firstItem="J8o-8H-6a6" firstAttribute="top" secondItem="skT-NS-6iu" secondAttribute="bottom" constant="1" id="fzV-xd-cCW"/>
                                         <constraint firstItem="VhV-sP-v8d" firstAttribute="leading" secondItem="0bB-fB-mdG" secondAttribute="trailing" constant="6" id="hQQ-Cj-Avj"/>
@@ -222,7 +245,9 @@
                                         <constraint firstItem="ujJ-oF-gAf" firstAttribute="top" secondItem="KaN-UA-U3A" secondAttribute="bottom" constant="9" id="nzZ-Ps-hke"/>
                                         <constraint firstAttribute="trailing" secondItem="KaN-UA-U3A" secondAttribute="trailing" constant="12" id="phQ-48-v9I"/>
                                         <constraint firstItem="J8o-8H-6a6" firstAttribute="leading" secondItem="GQe-pH-fpX" secondAttribute="trailing" constant="4" id="rCj-Z4-eS2"/>
+                                        <constraint firstAttribute="trailing" secondItem="96S-Gz-LP3" secondAttribute="trailing" constant="8" id="slQ-Vn-4nv"/>
                                         <constraint firstItem="VhV-sP-v8d" firstAttribute="top" secondItem="1ON-4h-lwf" secondAttribute="top" constant="8" id="w7d-wv-dvL"/>
+                                        <constraint firstItem="96S-Gz-LP3" firstAttribute="leading" secondItem="hJj-wp-p59" secondAttribute="trailing" constant="5" id="xUS-GD-tRe"/>
                                         <constraint firstItem="skT-NS-6iu" firstAttribute="top" secondItem="KaN-UA-U3A" secondAttribute="bottom" constant="1" id="yRP-fk-oQH"/>
                                         <constraint firstItem="KaN-UA-U3A" firstAttribute="top" secondItem="VhV-sP-v8d" secondAttribute="bottom" constant="1" id="zIP-fk-bdi"/>
                                     </constraints>
@@ -230,8 +255,10 @@
                                 <connections>
                                     <outlet property="customerAddress" destination="J8o-8H-6a6" id="2OT-VZ-bTr"/>
                                     <outlet property="customerName" destination="skT-NS-6iu" id="nKp-58-9rh"/>
+                                    <outlet property="customerPhone" destination="96S-Gz-LP3" id="1bV-Q0-JMN"/>
                                     <outlet property="startTime" destination="VhV-sP-v8d" id="ZNm-1k-ZXT"/>
                                     <outlet property="workType" destination="KaN-UA-U3A" id="LDs-gq-7e2"/>
+                                    <segue destination="H5W-oW-pNR" kind="show" id="SSR-cc-ADk"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -240,7 +267,7 @@
                             <outlet property="delegate" destination="yJM-Il-FLe" id="qmF-3Z-tuh"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Список нарядов" id="c89-fa-dEX">
+                    <navigationItem key="navigationItem" title="Наряды" id="c89-fa-dEX">
                         <barButtonItem key="leftBarButtonItem" title="Назад" id="aWD-oF-Pjk">
                             <connections>
                                 <action selector="backButton:" destination="yJM-Il-FLe" id="Y1w-MY-HWV"/>
@@ -260,6 +287,74 @@
             </objects>
             <point key="canvasLocation" x="1363.125" y="31.690140845070424"/>
         </scene>
+        <!--Выполнение-->
+        <scene sceneID="JcT-BC-d8k">
+            <objects>
+                <viewController id="HKV-P7-yRE" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uZU-WF-4QQ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="4Ft-Q7-HHM"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Выполнение" image="List30.png" id="UN7-MD-hqS"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DL6-No-KZ1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3977" y="32"/>
+        </scene>
+        <!--Отчет-->
+        <scene sceneID="dnC-Wn-D3y">
+            <objects>
+                <viewController id="Lqh-Ke-gEE" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gcf-Kw-MBz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Myc-Bz-1mj"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Отчет" image="work30.png" id="NvT-1M-l5C"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6xd-d3-nm9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3977" y="810"/>
+        </scene>
+        <!--Наряд-->
+        <scene sceneID="jFK-dG-cO2">
+            <objects>
+                <viewController id="5Az-7A-cay" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="K34-2K-BIv">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Zt9-vb-Tph"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Наряд" image="workers30.png" id="b87-gB-OT0"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S2z-uu-pSG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3977" y="-688"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="i15-dp-pJZ">
+            <objects>
+                <tabBarController id="H5W-oW-pNR" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="v78-mm-Wqw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="5Az-7A-cay" kind="relationship" relationship="viewControllers" id="bZh-yD-nau"/>
+                        <segue destination="HKV-P7-yRE" kind="relationship" relationship="viewControllers" id="l4E-NX-S4c"/>
+                        <segue destination="Lqh-Ke-gEE" kind="relationship" relationship="viewControllers" id="uuR-NX-K2X"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="71t-Vg-9T2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2284" y="32"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="HzS-yt-nsi">
             <objects>
@@ -276,14 +371,18 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SoL-yC-LWR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="684" y="32"/>
+            <point key="canvasLocation" x="583" y="32"/>
         </scene>
     </scenes>
     <resources>
+        <image name="List30.png" width="30" height="30"/>
         <image name="bell4x.png" width="192" height="192"/>
         <image name="location48.png" width="96" height="96"/>
         <image name="logosquare.png" width="300" height="300"/>
+        <image name="phone.png" width="626" height="626"/>
         <image name="settings4x.png" width="192" height="192"/>
         <image name="single4x.png" width="192" height="192"/>
+        <image name="work30.png" width="30" height="30"/>
+        <image name="workers30.png" width="30" height="30"/>
     </resources>
 </document>
