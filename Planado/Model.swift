@@ -45,6 +45,36 @@ func GetCurrentDate() -> String{
 }
 
 
+@IBDesignable class BorderedButton: UIButton {
+    
+    @IBInspectable var borderColor: UIColor = UIColor.white {
+        didSet {
+            layer.borderColor = borderColor.cgColor
+        }
+    }
+    
+    @IBInspectable var borderWidth: CGFloat = 2.0 {
+        didSet {
+            layer.borderWidth = borderWidth
+        }
+    }
+    
+}
 
+@IBDesignable class BorderedLabel: UILabel {
+    
+    @IBInspectable var borderColor: UIColor = UIColor.white {
+        didSet {
+            layer.borderColor = borderColor.cgColor
+        }
+    }
+    
+    @IBInspectable var borderWidth: CGFloat = 2.0 {
+        didSet {
+            layer.borderWidth = borderWidth
+        }
+    }
+
+}
 
 
