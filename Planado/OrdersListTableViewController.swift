@@ -12,6 +12,8 @@ class OrdersListTableViewController: UITableViewController {
 
     @IBOutlet weak var datePickerButton: UIBarButtonItem!
     
+    var selectedOrder = Order()
+    
     @IBAction func backButton(_ sender: Any) {
         //First method is to dissmis current controller and go back to previous automatically
         //in completion closure you can do any actions you want before dismissing current controller
@@ -131,21 +133,53 @@ class OrdersListTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "OrderCellIdentifier", for: indexPath) as! OrderCell
         
         let order = orders[indexPath.row] as Order
+        
+        //Fill current order state
+        selectedOrder = order
+        
+        //Fill table 
         cell.startTime?.text = order.startTime
         cell.workType?.text = order.workType
         cell.customerName?.text = order.customerName
         cell.customerAddress?.text = order.customerAddress
         cell.customerPhone?.text = order.customerPhone
+        cell.orderNumber?.text = order.orderNumber
+        switch order.orderStatus {
+        case .Started:
+            cell.orderStatus.image = startedImage
+        case .NotStarted:
+            cell.orderStatus.image = notStartedImage
+        case .Delayed:
+            cell.orderStatus.image = delayedImage
+        }
+        
         
         return cell
     }
   
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
 
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
+        
+        // Get the new view controller using segue.destination.
+        let destTabBarVC = segue.destination as! UITabBarController
+        let destinationVC = destTabBarVC.viewControllers![0] as! TabOrderViewController
+        //let destinationVC = destNavVC.topViewController as! TabOrderViewController
+        
+        //let tappedCell = (sender as! OrderCell)
+        
+        //destinationVC.orderAccomplishedStatus.text = tappedCell.startTime.text
+        //destNavVC.orderAccomplishedStatus.text = "!!!!!!!!"
+        
+        //        destinationVC.tappedCellOrder.customerName = tappedCell.customerName.text
+        //        destinationVC.tappedCellOrder.customerAddress = tappedCell.customerAddress.text
+        //        destinationVC.tappedCellOrder.workType = tappedCell.workType.text
+        destinationVC.tappedCellOrder = selectedOrder
+ 
+     }
     
     @objc func buttonAction(sender: UIButton!) {
         if sender.tag == 2 {
