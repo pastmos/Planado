@@ -134,9 +134,6 @@ class OrdersListTableViewController: UITableViewController {
         
         let order = orders[indexPath.row] as Order
         
-        //Fill current order state
-        selectedOrder = order
-        
         //Fill table 
         cell.startTime?.text = order.startTime
         cell.workType?.text = order.workType
@@ -157,30 +154,25 @@ class OrdersListTableViewController: UITableViewController {
         return cell
     }
   
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        tableView.deselectRow(at: indexPath, animated: true)
+        //Fill current order state
+        selectedOrder = orders[indexPath.row] as Order
+        performSegue(withIdentifier: "OrdersListTOTabOrderView", sender: self)
     }
-
+    
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        // Get the new view controller using segue.destination.
-        let destTabBarVC = segue.destination as! UITabBarController
-        let destinationVC = destTabBarVC.viewControllers![0] as! TabOrderViewController
-        //let destinationVC = destNavVC.topViewController as! TabOrderViewController
-        
-        //let tappedCell = (sender as! OrderCell)
-        
-        //destinationVC.orderAccomplishedStatus.text = tappedCell.startTime.text
-        //destNavVC.orderAccomplishedStatus.text = "!!!!!!!!"
-        
-        //        destinationVC.tappedCellOrder.customerName = tappedCell.customerName.text
-        //        destinationVC.tappedCellOrder.customerAddress = tappedCell.customerAddress.text
-        //        destinationVC.tappedCellOrder.workType = tappedCell.workType.text
-        destinationVC.tappedCellOrder = selectedOrder
- 
-     }
-    
+        if segue.identifier == "OrdersListTOTabOrderView"{
+            if let destTabBarVC = segue.destination as? UITabBarController{
+                if let destinationVC = destTabBarVC.viewControllers![0] as? TabOrderViewController{
+                    destinationVC.tappedCellOrder = selectedOrder
+                }
+            }
+        }
+    }
     @objc func buttonAction(sender: UIButton!) {
         if sender.tag == 2 {
             let formatter = DateFormatter()

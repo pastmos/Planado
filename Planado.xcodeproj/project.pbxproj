@@ -32,7 +32,7 @@
 		CEBA80A71F91067500A1D343 /* TabDoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBA80A61F91067500A1D343 /* TabDoneViewController.swift */; };
 		CEBA80A91F9106B200A1D343 /* TabProcessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBA80A81F9106B200A1D343 /* TabProcessViewController.swift */; };
 		CEBA80AB1F91114900A1D343 /* delayed64.png in Resources */ = {isa = PBXBuildFile; fileRef = CEBA80AA1F91114700A1D343 /* delayed64.png */; };
-		CEBA80AF1F914B6B00A1D343 /* phone24.png in Resources */ = {isa = PBXBuildFile; fileRef = CEBA80AE1F914B6B00A1D343 /* phone24.png */; };
+		CEBA80B11F919B3A00A1D343 /* phone18.png in Resources */ = {isa = PBXBuildFile; fileRef = CEBA80B01F919B3A00A1D343 /* phone18.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,7 +63,7 @@
 		CEBA80A61F91067500A1D343 /* TabDoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabDoneViewController.swift; sourceTree = "<group>"; };
 		CEBA80A81F9106B200A1D343 /* TabProcessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabProcessViewController.swift; sourceTree = "<group>"; };
 		CEBA80AA1F91114700A1D343 /* delayed64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = delayed64.png; sourceTree = "<group>"; };
-		CEBA80AE1F914B6B00A1D343 /* phone24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = phone24.png; sourceTree = "<group>"; };
+		CEBA80B01F919B3A00A1D343 /* phone18.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = phone18.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,7 +124,7 @@
 		CE6E9A151F7C70DD00967923 /* Pictures */ = {
 			isa = PBXGroup;
 			children = (
-				CEBA80AE1F914B6B00A1D343 /* phone24.png */,
+				CEBA80B01F919B3A00A1D343 /* phone18.png */,
 				CEBA80AA1F91114700A1D343 /* delayed64.png */,
 				CEBA80A21F91000A00A1D343 /* not_in_progress64.png */,
 				CEBA80A01F90FFA200A1D343 /* in_progress64.png */,
@@ -210,10 +210,10 @@
 				CEBA809B1F90DE9400A1D343 /* workers30.png in Resources */,
 				CE5029601F8404E10091381C /* bell4x.png in Resources */,
 				CE5029611F8404E10091381C /* settings4x.png in Resources */,
-				CEBA80AF1F914B6B00A1D343 /* phone24.png in Resources */,
 				CE6E9A1A1F7C70FA00967923 /* logo.png in Resources */,
 				CE6E2EC61F7AAF7B004CF67F /* Assets.xcassets in Resources */,
 				CE6E9A1B1F7C70FA00967923 /* logosquare.png in Resources */,
+				CEBA80B11F919B3A00A1D343 /* phone18.png in Resources */,
 				CEBA809F1F90EEDC00A1D343 /* phone.png in Resources */,
 				CEBA80A11F90FFA300A1D343 /* in_progress64.png in Resources */,
 				CEBA809D1F90DE9400A1D343 /* work30.png in Resources */,
