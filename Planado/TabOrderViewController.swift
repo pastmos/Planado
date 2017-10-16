@@ -20,11 +20,14 @@ class TabOrderViewController: UIViewController {
     @IBOutlet weak var workType: UITextView!
     
     var tappedCellOrder = Order()
-    
+
     //Actions
     @IBAction func callButtonPressed(_ sender: BorderedButton) {
-        
-    }
+        let phone = String(describing: tappedCellOrder.customerPhone!)
+        guard let phoneCallURL = URL(string: "tel://\(phone)")  else { return }
+        UIApplication.shared.open(phoneCallURL)
+            }
+
     @IBAction func startButtonPressed(_ sender: BorderedButton) {
         
         
