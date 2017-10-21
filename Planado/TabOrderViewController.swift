@@ -72,9 +72,19 @@ class TabOrderViewController: UIViewController {
     
     @IBAction func finishButtonPressed(_ sender: BorderedButton) {
         
-        if (self.tappedCellOrder.orderStatus != OrderStatusState.Completed){
-        //If the order is not completed
-        // create the alert
+        //If the order is not completed or hasnt been started
+        switch self.tappedCellOrder.orderStatus{
+        case .NotStarted:
+            let alert = UIAlertController(title: "Внимание!", message: "Данный наряд еще не начат", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        
+        case .Completed:
+            let alert = UIAlertController(title: "Внимание!", message: "Данный наряд уже выполнен", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        
+        default:
         let alert = UIAlertController(title: "Завершить наряд?", message: "Завершайте наряд только если он полностью выполнен", preferredStyle: UIAlertControllerStyle.alert)
         
         // add the actions (buttons)
@@ -88,18 +98,8 @@ class TabOrderViewController: UIViewController {
         // show the alert
         self.present(alert, animated: true, completion: nil)
 
-    }
-        else{
-            //If the order is already completed
-            // create the alert
-            let alert = UIAlertController(title: "Внимание!", message: "Данный наряд уже выполнен", preferredStyle: UIAlertControllerStyle.alert)
-            
-            // add an action (button)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-            
-            // show the alert
-            self.present(alert, animated: true, completion: nil)
-        }
+            }
+    
     }
 
     override func viewWillAppear(_ animated: Bool) {
