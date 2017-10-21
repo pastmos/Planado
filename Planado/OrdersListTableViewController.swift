@@ -117,6 +117,13 @@ class OrdersListTableViewController: UITableViewController {
 
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        
+        //Update visible rows in table
+        self.tableView.beginUpdates()
+        self.tableView.reloadRows(at: self.tableView.indexPathsForVisibleRows!, with: .none)
+        self.tableView.endUpdates()
+    }
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -148,6 +155,8 @@ class OrdersListTableViewController: UITableViewController {
             cell.orderStatus.image = notStartedImage
         case .Delayed:
             cell.orderStatus.image = delayedImage
+        case .Completed:
+            cell.orderStatus.image = completedImage
         }
         
         

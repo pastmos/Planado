@@ -4,7 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -447,11 +447,11 @@
                                 <color key="textColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" editable="NO" text="cccccccccccccccccccccccccccccccccccccccccccccc" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ClL-Sx-MXf">
+                            <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="cccccccccccccccccccccccccccccccccccccccccccccc" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ClL-Sx-MXf">
                                 <rect key="frame" x="38" y="257" width="240" height="36"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="238" id="WFT-na-3nq"/>
+                                    <constraint firstAttribute="width" constant="240" id="WFT-na-3nq"/>
                                 </constraints>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -476,7 +476,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S49-LK-E1U" customClass="BorderedButton" customModule="Planado" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S49-LK-E1U" customClass="BorderedButton" customModule="Planado" customModuleProvider="target">
                                 <rect key="frame" x="38" y="301" width="133" height="44"/>
                                 <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="0.1384845890410959" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -507,7 +507,7 @@
                             <constraint firstItem="Zt9-vb-Tph" firstAttribute="bottom" secondItem="uGV-FX-0C9" secondAttribute="bottom" id="0Yy-1D-G3w"/>
                             <constraint firstItem="S49-LK-E1U" firstAttribute="leading" secondItem="Zt9-vb-Tph" secondAttribute="leading" constant="38" id="2wT-eC-PJ9"/>
                             <constraint firstItem="Zt9-vb-Tph" firstAttribute="trailing" secondItem="PLn-Eu-PiY" secondAttribute="trailing" id="5fp-wj-cFX"/>
-                            <constraint firstItem="ClL-Sx-MXf" firstAttribute="top" secondItem="viz-D1-7pI" secondAttribute="bottom" constant="5" id="7Jm-6S-ZV8"/>
+                            <constraint firstItem="ClL-Sx-MXf" firstAttribute="top" secondItem="viz-D1-7pI" secondAttribute="bottom" constant="3.5" id="7Jm-6S-ZV8"/>
                             <constraint firstItem="viz-D1-7pI" firstAttribute="top" secondItem="u6r-wR-gqD" secondAttribute="bottom" constant="-2" id="BoE-d7-sqa"/>
                             <constraint firstItem="Zt9-vb-Tph" firstAttribute="trailing" secondItem="gkf-Aa-k4q" secondAttribute="trailing" constant="44" id="C2r-Ah-CtA"/>
                             <constraint firstItem="Zt9-vb-Tph" firstAttribute="trailing" secondItem="u6r-wR-gqD" secondAttribute="trailing" constant="55" id="Edi-TV-cXP"/>
@@ -537,7 +537,7 @@
                             <constraint firstItem="qaY-0k-iua" firstAttribute="leading" secondItem="Zt9-vb-Tph" secondAttribute="leading" constant="38" id="oGc-91-GFo"/>
                             <constraint firstItem="PLn-Eu-PiY" firstAttribute="leading" secondItem="BvT-Zk-daf" secondAttribute="trailing" constant="-1" id="pru-SV-qxf"/>
                             <constraint firstItem="VyF-UK-UES" firstAttribute="top" secondItem="BvT-Zk-daf" secondAttribute="bottom" constant="10" id="sFQ-Z4-WWS"/>
-                            <constraint firstItem="S49-LK-E1U" firstAttribute="top" secondItem="ClL-Sx-MXf" secondAttribute="bottom" constant="5" id="sTl-OT-lHL"/>
+                            <constraint firstItem="S49-LK-E1U" firstAttribute="top" secondItem="ClL-Sx-MXf" secondAttribute="bottom" constant="8" id="sTl-OT-lHL"/>
                             <constraint firstItem="U7G-XX-wDd" firstAttribute="top" secondItem="S49-LK-E1U" secondAttribute="bottom" constant="15" id="uku-vz-Cm9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Zt9-vb-Tph"/>

@@ -19,11 +19,13 @@ var currentDateForOrdersList = Date()
 let startedImage = UIImage(named: "in_progress64.png")
 let notStartedImage = UIImage(named: "not_in_progress64.png")
 let delayedImage = UIImage(named: "delayed64.png")
+let completedImage = UIImage(named: "completed64.png")
 
 enum OrderStatusState {
     case NotStarted
     case Delayed
     case Started
+    case Completed
 }
 
 class Order{

@@ -13,6 +13,7 @@
 		CE5029601F8404E10091381C /* bell4x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE50295C1F8404E10091381C /* bell4x.png */; };
 		CE5029611F8404E10091381C /* settings4x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE50295D1F8404E10091381C /* settings4x.png */; };
 		CE5029621F8404E10091381C /* single4x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE50295E1F8404E10091381C /* single4x.png */; };
+		CE66EEF91F9BECEE00D0C9B8 /* completed64.png in Resources */ = {isa = PBXBuildFile; fileRef = CE66EEF81F9BECEE00D0C9B8 /* completed64.png */; };
 		CE6E2EBF1F7AAF7B004CF67F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E2EBE1F7AAF7B004CF67F /* AppDelegate.swift */; };
 		CE6E2EC11F7AAF7B004CF67F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E2EC01F7AAF7B004CF67F /* LoginViewController.swift */; };
 		CE6E2EC41F7AAF7B004CF67F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE6E2EC21F7AAF7B004CF67F /* Main.storyboard */; };
@@ -42,6 +43,7 @@
 		CE50295C1F8404E10091381C /* bell4x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bell4x.png; sourceTree = "<group>"; };
 		CE50295D1F8404E10091381C /* settings4x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings4x.png; sourceTree = "<group>"; };
 		CE50295E1F8404E10091381C /* single4x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = single4x.png; sourceTree = "<group>"; };
+		CE66EEF81F9BECEE00D0C9B8 /* completed64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = completed64.png; sourceTree = "<group>"; };
 		CE6E2EBB1F7AAF7B004CF67F /* Planado.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Planado.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE6E2EBE1F7AAF7B004CF67F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE6E2EC01F7AAF7B004CF67F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 		CE6E9A151F7C70DD00967923 /* Pictures */ = {
 			isa = PBXGroup;
 			children = (
+				CE66EEF81F9BECEE00D0C9B8 /* completed64.png */,
 				CEBA80B01F919B3A00A1D343 /* phone18.png */,
 				CEBA80AA1F91114700A1D343 /* delayed64.png */,
 				CEBA80A21F91000A00A1D343 /* not_in_progress64.png */,
@@ -208,6 +211,7 @@
 				CEBA80AB1F91114900A1D343 /* delayed64.png in Resources */,
 				CE6E2EC91F7AAF7B004CF67F /* LaunchScreen.storyboard in Resources */,
 				CEBA809B1F90DE9400A1D343 /* workers30.png in Resources */,
+				CE66EEF91F9BECEE00D0C9B8 /* completed64.png in Resources */,
 				CE5029601F8404E10091381C /* bell4x.png in Resources */,
 				CE5029611F8404E10091381C /* settings4x.png in Resources */,
 				CE6E9A1A1F7C70FA00967923 /* logo.png in Resources */,
