@@ -1,0 +1,6 @@
+framework module Pods_Planado {
+  umbrella header "Pods-Planado-umbrella.h"
+
+  export *
+  module * { export * }
+}

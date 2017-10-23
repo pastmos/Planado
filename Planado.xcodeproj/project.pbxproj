@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD23CC911D939C30125CE756 /* Pods_Planado.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DC73B9846A7F33D6A24725E /* Pods_Planado.framework */; };
 		CE1602DF1F82DE8300A9E39B /* OrdersListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1602DE1F82DE8300A9E39B /* OrdersListTableViewController.swift */; };
 		CE1602E31F83281F00A9E39B /* OrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1602E21F83281F00A9E39B /* OrderCell.swift */; };
 		CE1603071F83FAD000A9E39B /* location48.png in Resources */ = {isa = PBXBuildFile; fileRef = CE1603061F83FAD000A9E39B /* location48.png */; };
@@ -14,6 +15,7 @@
 		CE5029611F8404E10091381C /* settings4x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE50295D1F8404E10091381C /* settings4x.png */; };
 		CE5029621F8404E10091381C /* single4x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE50295E1F8404E10091381C /* single4x.png */; };
 		CE66EEF91F9BECEE00D0C9B8 /* completed64.png in Resources */ = {isa = PBXBuildFile; fileRef = CE66EEF81F9BECEE00D0C9B8 /* completed64.png */; };
+		CE66EEFB1F9E378C00D0C9B8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE66EEFA1F9E378C00D0C9B8 /* GoogleService-Info.plist */; };
 		CE6E2EBF1F7AAF7B004CF67F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E2EBE1F7AAF7B004CF67F /* AppDelegate.swift */; };
 		CE6E2EC11F7AAF7B004CF67F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E2EC01F7AAF7B004CF67F /* LoginViewController.swift */; };
 		CE6E2EC41F7AAF7B004CF67F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE6E2EC21F7AAF7B004CF67F /* Main.storyboard */; };
@@ -37,6 +39,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6ADCAEF19A943DC81CE454C2 /* Pods-Planado.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Planado.release.xcconfig"; path = "Pods/Target Support Files/Pods-Planado/Pods-Planado.release.xcconfig"; sourceTree = "<group>"; };
+		9DC73B9846A7F33D6A24725E /* Pods_Planado.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Planado.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9789921AA067DF655BA8DF8 /* Pods-Planado.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Planado.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Planado/Pods-Planado.debug.xcconfig"; sourceTree = "<group>"; };
 		CE1602DE1F82DE8300A9E39B /* OrdersListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersListTableViewController.swift; sourceTree = "<group>"; };
 		CE1602E21F83281F00A9E39B /* OrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCell.swift; sourceTree = "<group>"; };
 		CE1603061F83FAD000A9E39B /* location48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = location48.png; sourceTree = "<group>"; };
@@ -44,6 +49,7 @@
 		CE50295D1F8404E10091381C /* settings4x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings4x.png; sourceTree = "<group>"; };
 		CE50295E1F8404E10091381C /* single4x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = single4x.png; sourceTree = "<group>"; };
 		CE66EEF81F9BECEE00D0C9B8 /* completed64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = completed64.png; sourceTree = "<group>"; };
+		CE66EEFA1F9E378C00D0C9B8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CE6E2EBB1F7AAF7B004CF67F /* Planado.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Planado.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE6E2EBE1F7AAF7B004CF67F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE6E2EC01F7AAF7B004CF67F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -73,18 +79,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD23CC911D939C30125CE756 /* Pods_Planado.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		56FF420940E74AED646CBABF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9DC73B9846A7F33D6A24725E /* Pods_Planado.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CE6E2EB21F7AAF7B004CF67F = {
 			isa = PBXGroup;
 			children = (
 				CE6E2EBD1F7AAF7B004CF67F /* Planado */,
 				CE6E2EBC1F7AAF7B004CF67F /* Products */,
 				CE6E9A151F7C70DD00967923 /* Pictures */,
+				D443ECFC5DC704AFBFC63A97 /* Pods */,
+				56FF420940E74AED646CBABF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -118,6 +135,7 @@
 				CE6E2EBE1F7AAF7B004CF67F /* AppDelegate.swift */,
 				CE6E2EC51F7AAF7B004CF67F /* Assets.xcassets */,
 				CE6E2EC71F7AAF7B004CF67F /* LaunchScreen.storyboard */,
+				CE66EEFA1F9E378C00D0C9B8 /* GoogleService-Info.plist */,
 				CE6E2ECA1F7AAF7B004CF67F /* Info.plist */,
 			);
 			path = "Supporting Files";
@@ -146,6 +164,15 @@
 			path = Pictures;
 			sourceTree = "<group>";
 		};
+		D443ECFC5DC704AFBFC63A97 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B9789921AA067DF655BA8DF8 /* Pods-Planado.debug.xcconfig */,
+				6ADCAEF19A943DC81CE454C2 /* Pods-Planado.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -153,9 +180,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE6E2ECD1F7AAF7B004CF67F /* Build configuration list for PBXNativeTarget "Planado" */;
 			buildPhases = (
+				EB7D940613CBB7A5C97090A2 /* [CP] Check Pods Manifest.lock */,
 				CE6E2EB71F7AAF7B004CF67F /* Sources */,
 				CE6E2EB81F7AAF7B004CF67F /* Frameworks */,
 				CE6E2EB91F7AAF7B004CF67F /* Resources */,
+				15275DF692C2274A18611C31 /* [CP] Embed Pods Frameworks */,
+				44600B091452F5208CB1358C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -222,12 +252,73 @@
 				CEBA80A11F90FFA300A1D343 /* in_progress64.png in Resources */,
 				CEBA809D1F90DE9400A1D343 /* work30.png in Resources */,
 				CEBA80A31F91000A00A1D343 /* not_in_progress64.png in Resources */,
+				CE66EEFB1F9E378C00D0C9B8 /* GoogleService-Info.plist in Resources */,
 				CE6E9A191F7C70FA00967923 /* logohead.png in Resources */,
 				CE6E2EC41F7AAF7B004CF67F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		15275DF692C2274A18611C31 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Planado/Pods-Planado-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Planado/Pods-Planado-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		44600B091452F5208CB1358C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Planado/Pods-Planado-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EB7D940613CBB7A5C97090A2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Planado-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CE6E2EB71F7AAF7B004CF67F /* Sources */ = {
@@ -376,6 +467,7 @@
 		};
 		CE6E2ECE1F7AAF7B004CF67F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B9789921AA067DF655BA8DF8 /* Pods-Planado.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -391,6 +483,7 @@
 		};
 		CE6E2ECF1F7AAF7B004CF67F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6ADCAEF19A943DC81CE454C2 /* Pods-Planado.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>1092393240405-t7341rgd0vrksihtlefhkk1sgoqvf4vk.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1092393240405-t7341rgd0vrksihtlefhkk1sgoqvf4vk</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCpIzZ1Sqzqo2B6tvL88fQNx5kzVn-hbgk</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1092393240405</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>ru.laterasoft.Planado</string>
+	<key>PROJECT_ID</key>
+	<string>planado-f2bb7</string>
+	<key>STORAGE_BUCKET</key>
+	<string>planado-f2bb7.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1092393240405:ios:978aff07e6d0c8a4</string>
+	<key>DATABASE_URL</key>
+	<string>https://planado-f2bb7.firebaseio.com</string>
+</dict>
+</plist>
