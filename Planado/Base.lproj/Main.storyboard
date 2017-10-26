@@ -82,7 +82,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="M5u-XA-d81" kind="show" id="J5f-82-nPA"/>
+                                    <action selector="loginButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RCE-JT-KQ9"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -114,6 +114,7 @@
                     <connections>
                         <outlet property="loginText" destination="Hm8-nV-Xlr" id="rUR-2y-PKK"/>
                         <outlet property="passwordText" destination="Fcp-aQ-rS2" id="8Ee-wN-vn1"/>
+                        <segue destination="M5u-XA-d81" kind="show" identifier="LoginToOrderListSeague" id="bbT-Mw-Kek"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

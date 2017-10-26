@@ -24,37 +24,38 @@ class TabOrderViewController: UIViewController {
     @IBOutlet weak var customerName: UITextView!
     @IBOutlet weak var workType: UITextView!
     
-    var tappedCellOrder = Order()
+    var tappedCellOrder: Order = Order()
+    var tappedIndex: Int!
 
     //Actions
     @IBAction func callButtonPressed(_ sender: BorderedButton) {
-        let phone = String(describing: tappedCellOrder.customerPhone!)
+        let phone = String(describing: tappedCellOrder.customer.customerPhone)
         guard let phoneCallURL = URL(string: "tel://\(phone)")  else { return }
         UIApplication.shared.open(phoneCallURL)
             }
 
     @IBAction func startButtonPressed(_ sender: BorderedButton) {
         
-        switch tappedCellOrder.orderStatus{
+        switch tappedCellOrder.orderInfo.orderStatus{
             
         case .NotStarted:
             orderAccomplishedStatus.text = "Выполняется"
             orderAccomplishedStatus.textColor = .orange
             startButton.setTitle("Остановить", for: .normal)
-            tappedCellOrder.orderStatus = OrderStatusState.Started
+            tappedCellOrder.orderInfo.orderStatus = OrderStatusState.Started
             
         case .Started:
             orderAccomplishedStatus.text = "Остановлен"
             orderAccomplishedStatus.textColor = .red
             startButton.setTitle("Продолжить", for: .normal)
-            tappedCellOrder.orderStatus = OrderStatusState.Delayed
+            tappedCellOrder.orderInfo.orderStatus = OrderStatusState.Delayed
         
         case .Delayed:
             orderAccomplishedStatus.text = "Выполняется"
             orderAccomplishedStatus.textColor = .orange
             startButton.setTitle("Остановить", for: .normal)
             //startButton.setTitleColor(.orange, for: .normal)
-            tappedCellOrder.orderStatus = OrderStatusState.Started
+            tappedCellOrder.orderInfo.orderStatus = OrderStatusState.Started
         
         case .Completed:
             // create the alert
@@ -73,7 +74,7 @@ class TabOrderViewController: UIViewController {
     @IBAction func finishButtonPressed(_ sender: BorderedButton) {
         
         //If the order is not completed or hasnt been started
-        switch self.tappedCellOrder.orderStatus{
+        switch self.tappedCellOrder.orderInfo.orderStatus{
         case .NotStarted:
             let alert = UIAlertController(title: "Внимание!", message: "Данный наряд еще не начат", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
@@ -91,7 +92,7 @@ class TabOrderViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "Завершить", style: UIAlertActionStyle.default, handler: {[weak self] action in
             self?.orderAccomplishedStatus.text = "Выполнен"
             self?.orderAccomplishedStatus.textColor = .green
-            self?.tappedCellOrder.orderStatus = OrderStatusState.Completed
+            self?.tappedCellOrder.orderInfo.orderStatus = OrderStatusState.Completed
             }))
         alert.addAction(UIAlertAction(title: "Отмена", style: UIAlertActionStyle.cancel, handler: nil))
         
@@ -103,13 +104,12 @@ class TabOrderViewController: UIViewController {
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        self.customerName.text = tappedCellOrder.customerName
-        self.customerAddress.text = tappedCellOrder.customerAddress
-        self.workType.text = tappedCellOrder.workType
-        self.orderTime.text = tappedCellOrder.startTime
-        //self.orderAccomplishedStatus.text = tappedCellOrder.orderStatus
+        self.customerName.text = tappedCellOrder.customer.customerName
+        self.customerAddress.text = tappedCellOrder.customer.customerAddress
+        self.workType.text = tappedCellOrder.orderInfo.workType
+        self.orderTime.text = tappedCellOrder.orderInfo.startTime
         
-        switch tappedCellOrder.orderStatus {
+        switch tappedCellOrder.orderInfo.orderStatus {
         case .NotStarted:
             self.orderAccomplishedStatus.text = "Не начат"
             startButton.setTitle("Начать", for: .normal)
@@ -128,5 +128,8 @@ class TabOrderViewController: UIViewController {
         }
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        orders[tappedIndex].orderInfo.orderStatus = tappedCellOrder.orderInfo.orderStatus
+    }
     
 }

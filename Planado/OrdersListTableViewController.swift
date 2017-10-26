@@ -7,12 +7,20 @@
 //
 
 import UIKit
+import FirebaseDatabase
+
+
+//protocol SetOrderDelegate: class {
+//    func changeBackgroundColor(_ color: UIColor?)
+//}
 
 class OrdersListTableViewController: UITableViewController {
 
+    var tappedIndex: Int!
+    
     @IBOutlet weak var datePickerButton: UIBarButtonItem!
     
-    var selectedOrder = Order()
+    //var selectedOrder: Order!
     
     @IBAction func backButton(_ sender: Any) {
         //First method is to dissmis current controller and go back to previous automatically
@@ -110,15 +118,17 @@ class OrdersListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.datePickerButton.title = currentDate
+            
+
+        
     }
 
     
-    override func viewWillAppear(_ animated: Bool) {
-
-    }
+//    override func viewWillAppear(_ animated: Bool) {
+//
+//    }
     
     override func viewDidAppear(_ animated: Bool) {
-        
         //Update visible rows in table
         self.tableView.beginUpdates()
         self.tableView.reloadRows(at: self.tableView.indexPathsForVisibleRows!, with: .none)
@@ -142,13 +152,13 @@ class OrdersListTableViewController: UITableViewController {
         let order = orders[indexPath.row] as Order
         
         //Fill table 
-        cell.startTime?.text = order.startTime
-        cell.workType?.text = order.workType
-        cell.customerName?.text = order.customerName
-        cell.customerAddress?.text = order.customerAddress
-        cell.customerPhone?.text = order.customerPhone
-        cell.orderNumber?.text = order.orderNumber
-        switch order.orderStatus {
+        cell.startTime?.text = order.orderInfo.startTime
+        cell.workType?.text = order.orderInfo.workType
+        cell.customerName?.text = order.customer.customerName
+        cell.customerAddress?.text = order.customer.customerAddress
+        cell.customerPhone?.text = order.customer.customerPhone
+        cell.orderNumber?.text = order.orderInfo.orderNumber
+        switch order.orderInfo.orderStatus {
         case .Started:
             cell.orderStatus.image = startedImage
         case .NotStarted:
@@ -166,6 +176,7 @@ class OrdersListTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        self.tappedIndex = indexPath.row
         //Fill current order state
         selectedOrder = orders[indexPath.row] as Order
         performSegue(withIdentifier: "OrdersListTOTabOrderView", sender: self)
@@ -178,10 +189,13 @@ class OrdersListTableViewController: UITableViewController {
             if let destTabBarVC = segue.destination as? UITabBarController{
                 if let destinationVC = destTabBarVC.viewControllers![0] as? TabOrderViewController{
                     destinationVC.tappedCellOrder = selectedOrder
+                    destinationVC.tappedIndex = self.tappedIndex
                 }
             }
         }
     }
+    
+    
     @objc func buttonAction(sender: UIButton!) {
         if sender.tag == 2 {
             let formatter = DateFormatter()
