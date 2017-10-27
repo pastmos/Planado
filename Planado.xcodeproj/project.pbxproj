@@ -25,17 +25,13 @@
 		CE6E9A1A1F7C70FA00967923 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = CE6E9A171F7C70FA00967923 /* logo.png */; };
 		CE6E9A1B1F7C70FA00967923 /* logosquare.png in Resources */ = {isa = PBXBuildFile; fileRef = CE6E9A181F7C70FA00967923 /* logosquare.png */; };
 		CE6E9A1D1F7C760200967923 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E9A1C1F7C760200967923 /* Model.swift */; };
-		CEBA809B1F90DE9400A1D343 /* workers30.png in Resources */ = {isa = PBXBuildFile; fileRef = CEBA80981F90DE9300A1D343 /* workers30.png */; };
 		CEBA809C1F90DE9400A1D343 /* List30.png in Resources */ = {isa = PBXBuildFile; fileRef = CEBA80991F90DE9400A1D343 /* List30.png */; };
-		CEBA809D1F90DE9400A1D343 /* work30.png in Resources */ = {isa = PBXBuildFile; fileRef = CEBA809A1F90DE9400A1D343 /* work30.png */; };
-		CEBA809F1F90EEDC00A1D343 /* phone.png in Resources */ = {isa = PBXBuildFile; fileRef = CEBA809E1F90EEDC00A1D343 /* phone.png */; };
 		CEBA80A11F90FFA300A1D343 /* in_progress64.png in Resources */ = {isa = PBXBuildFile; fileRef = CEBA80A01F90FFA200A1D343 /* in_progress64.png */; };
 		CEBA80A31F91000A00A1D343 /* not_in_progress64.png in Resources */ = {isa = PBXBuildFile; fileRef = CEBA80A21F91000A00A1D343 /* not_in_progress64.png */; };
 		CEBA80A51F9105F400A1D343 /* TabOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBA80A41F9105F400A1D343 /* TabOrderViewController.swift */; };
 		CEBA80A71F91067500A1D343 /* TabDoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBA80A61F91067500A1D343 /* TabDoneViewController.swift */; };
 		CEBA80A91F9106B200A1D343 /* TabProcessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBA80A81F9106B200A1D343 /* TabProcessViewController.swift */; };
 		CEBA80AB1F91114900A1D343 /* delayed64.png in Resources */ = {isa = PBXBuildFile; fileRef = CEBA80AA1F91114700A1D343 /* delayed64.png */; };
-		CEBA80B11F919B3A00A1D343 /* phone18.png in Resources */ = {isa = PBXBuildFile; fileRef = CEBA80B01F919B3A00A1D343 /* phone18.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,17 +58,13 @@
 		CE6E9A171F7C70FA00967923 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = ../../../../Users/Past/Downloads/logo.png; sourceTree = "<group>"; };
 		CE6E9A181F7C70FA00967923 /* logosquare.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logosquare.png; path = ../../../../Users/Past/Downloads/logosquare.png; sourceTree = "<group>"; };
 		CE6E9A1C1F7C760200967923 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		CEBA80981F90DE9300A1D343 /* workers30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = workers30.png; sourceTree = "<group>"; };
 		CEBA80991F90DE9400A1D343 /* List30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = List30.png; sourceTree = "<group>"; };
-		CEBA809A1F90DE9400A1D343 /* work30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = work30.png; sourceTree = "<group>"; };
-		CEBA809E1F90EEDC00A1D343 /* phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = phone.png; sourceTree = "<group>"; };
 		CEBA80A01F90FFA200A1D343 /* in_progress64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = in_progress64.png; sourceTree = "<group>"; };
 		CEBA80A21F91000A00A1D343 /* not_in_progress64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = not_in_progress64.png; sourceTree = "<group>"; };
 		CEBA80A41F9105F400A1D343 /* TabOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TabOrderViewController.swift; path = Planado/TabOrderViewController.swift; sourceTree = SOURCE_ROOT; };
 		CEBA80A61F91067500A1D343 /* TabDoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabDoneViewController.swift; sourceTree = "<group>"; };
 		CEBA80A81F9106B200A1D343 /* TabProcessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabProcessViewController.swift; sourceTree = "<group>"; };
 		CEBA80AA1F91114700A1D343 /* delayed64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = delayed64.png; sourceTree = "<group>"; };
-		CEBA80B01F919B3A00A1D343 /* phone18.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = phone18.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,14 +139,10 @@
 			isa = PBXGroup;
 			children = (
 				CE66EEF81F9BECEE00D0C9B8 /* completed64.png */,
-				CEBA80B01F919B3A00A1D343 /* phone18.png */,
 				CEBA80AA1F91114700A1D343 /* delayed64.png */,
 				CEBA80A21F91000A00A1D343 /* not_in_progress64.png */,
 				CEBA80A01F90FFA200A1D343 /* in_progress64.png */,
-				CEBA809E1F90EEDC00A1D343 /* phone.png */,
 				CEBA80991F90DE9400A1D343 /* List30.png */,
-				CEBA809A1F90DE9400A1D343 /* work30.png */,
-				CEBA80981F90DE9300A1D343 /* workers30.png */,
 				CE50295C1F8404E10091381C /* bell4x.png */,
 				CE50295D1F8404E10091381C /* settings4x.png */,
 				CE50295E1F8404E10091381C /* single4x.png */,
@@ -247,17 +235,13 @@
 				CE5029621F8404E10091381C /* single4x.png in Resources */,
 				CEBA80AB1F91114900A1D343 /* delayed64.png in Resources */,
 				CE6E2EC91F7AAF7B004CF67F /* LaunchScreen.storyboard in Resources */,
-				CEBA809B1F90DE9400A1D343 /* workers30.png in Resources */,
 				CE66EEF91F9BECEE00D0C9B8 /* completed64.png in Resources */,
 				CE5029601F8404E10091381C /* bell4x.png in Resources */,
 				CE5029611F8404E10091381C /* settings4x.png in Resources */,
 				CE6E9A1A1F7C70FA00967923 /* logo.png in Resources */,
 				CE6E2EC61F7AAF7B004CF67F /* Assets.xcassets in Resources */,
 				CE6E9A1B1F7C70FA00967923 /* logosquare.png in Resources */,
-				CEBA80B11F919B3A00A1D343 /* phone18.png in Resources */,
-				CEBA809F1F90EEDC00A1D343 /* phone.png in Resources */,
 				CEBA80A11F90FFA300A1D343 /* in_progress64.png in Resources */,
-				CEBA809D1F90DE9400A1D343 /* work30.png in Resources */,
 				CEBA80A31F91000A00A1D343 /* not_in_progress64.png in Resources */,
 				CE66EEFB1F9E378C00D0C9B8 /* GoogleService-Info.plist in Resources */,
 				CE6E9A191F7C70FA00967923 /* logohead.png in Resources */,

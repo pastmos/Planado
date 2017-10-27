@@ -60,10 +60,13 @@ class LoginViewController: UIViewController {
 
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewDidLoad() {
         currentDate = GetCurrentDate()
         orders = []
         FetchParseOrdersListFirebase()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         
        }
 
