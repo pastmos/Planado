@@ -200,7 +200,7 @@ class FirebaseObservers
         var dateSelectedOrderCounter = 0
             
         //lets get full list of orders IDs(order1,order2,....)
-        self.ref.observe(.value, with: { snapshot in
+        self.ref.observeSingleEvent(of: .value, with: { snapshot in
             if let orderSnapshots = snapshot.children.allObjects as? [DataSnapshot] {
                 //reset orders list
                 ordersIDList = [String]()
@@ -253,32 +253,18 @@ class FirebaseObservers
         
             childChangedHandler = self.ref.observe(.childChanged, with: { (snapshot: DataSnapshot) in
                 if let nodeSnapshots = snapshot.children.allObjects as? [DataSnapshot] {
-                    let orderNumber = Int(snapshot.key)
-                    //print(nodeSnapshots)
-                    //parsing orders data from Firebase one by one
-
                     
-//                let artist = snapshot.childSnapshot(forPath: "artist").value as! String
-//                let title = snapshot.childSnapshot(forPath: "title").value as! String
-//                let picture = snapshot.childSnapshot(forPath: "picture").value as! String
-//                let vidURL = snapshot.childSnapshot(forPath: "url").value as! String
-//
-//                print("\(artist) \n\(title) \n\(picture) \n\(vidURL)")
-//
-//                let youtubeURL = NSURL(string: vidURL)
-//                let youtubeRequest = NSMutableURLRequest(url: youtubeURL! as URL)
-//                youtubeRequest.setValue("https://www.youtube.com", forHTTPHeaderField: "Referer")
-//
-//                let p1 = AddCell(imageURL: picture ,
-//                                 videoURL: youtubeRequest,
-//                                 songTitle: title,
-//                                 artistName: artist)
-//
-//                self.addCells.append(p1)
-                let x = 3
+                    let parsedOrder = parseOrder(snapshots: nodeSnapshots)
+                        for orderNum in 0..<orders.count{
+                            if(orders[orderNum].orderInfo.orderNumber == parsedOrder.orderInfo.orderNumber){
+                                orders[orderNum] = parsedOrder
+                                
+                                //reload particular row that has changed
+                                reloadRowInSection(row: orderNum, section: 0, animation: .left, senderVC:  senderVC)
+                            }
+                        }
                 }
             })
-
     }
 }
     
@@ -296,6 +282,13 @@ class FirebaseObservers
     
     
     
+}
+
+func reloadRowInSection( row: Int, section: Int, animation: UITableViewRowAnimation, senderVC: UITableViewController ){
+    let indexPath = IndexPath(row: row, section: section)
+    senderVC.tableView?.beginUpdates()
+    senderVC.tableView?.reloadRows(at: [indexPath], with: animation)
+    senderVC.tableView?.endUpdates()
 }
 
 func parseOrder(snapshots: [DataSnapshot]) -> Order{
