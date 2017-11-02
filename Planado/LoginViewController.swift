@@ -62,12 +62,12 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         currentDate = GetCurrentDate()
-        orders = []
-        FetchParseOrdersListFirebase()
+        //orders = []
+        //FetchParseOrdersListFirebase()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
+        orders = []
        }
 
 }

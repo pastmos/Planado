@@ -17,12 +17,14 @@ import FirebaseDatabase
 class OrdersListTableViewController: UITableViewController {
 
     var tappedIndex: Int!
+    var FBObservers = FirebaseObservers()
     
     @IBOutlet weak var datePickerButton: UIBarButtonItem!
     
     //var selectedOrder: Order!
     
     @IBAction func backButton(_ sender: Any) {
+        orders = []
         //First method is to dissmis current controller and go back to previous automatically
         //in completion closure you can do any actions you want before dismissing current controller
         self.dismiss(animated: true, completion: nil)
@@ -50,13 +52,23 @@ class OrdersListTableViewController: UITableViewController {
         datePicker.layer.cornerRadius = 20
         datePicker.tag = 3
         
+        //lets set min and max dates for picker and set current date, using now
+        let format = DateFormatter()
+        format.dateFormat = "dd.MM.yy"
+        let date = format.date(from: currentDate)
+        let todayDate = format.date(from: GetCurrentDate())
+        datePicker.date = date!
+        datePicker.minimumDate = Calendar.current.date(byAdding: .month, value: -1, to: Date())
+        datePicker.maximumDate = Calendar.current.date(byAdding: .month, value: 12, to: Date())
+
+        
         //Set properties for OK and Cancel
         okButton.backgroundColor = UIColor(red: 0.2, green: 0.5, blue: 1, alpha: 1.0)
         okButton.layer.masksToBounds = true
         okButton.layer.cornerRadius = 15
         okButton.setTitle("Выбрать", for: .normal)
         okButton.tag = 2
-        okButton.addTarget(self, action: #selector(buttonAction), for: UIControlEvents.touchUpInside)
+        okButton.addTarget(self, action: #selector(datePickerButtonHandler), for: UIControlEvents.touchUpInside)
 
         
         datePickerUIView.backgroundColor = UIColor.white.withAlphaComponent(0.0)
@@ -118,21 +130,32 @@ class OrdersListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.datePickerButton.title = currentDate
-            
-
         
+        //get full list data from FireBase
+        FBObservers.setValueListener(sender: self)
+        FBObservers.setChildChangedListener(sender: self)
+        
+//        let ref = Database.database().reference().child("orders")
+//        ref.observe(.childChanged, with: { (snapshot: DataSnapshot) in
+//            print (snapshot)
+//            let x = 3
+//
+//        })
     }
 
     
-//    override func viewWillAppear(_ animated: Bool) {
-//
-//    }
+    override func viewWillAppear(_ animated: Bool) {
+
+
+
+    }
     
     override func viewDidAppear(_ animated: Bool) {
         //Update visible rows in table
         self.tableView.beginUpdates()
         self.tableView.reloadRows(at: self.tableView.indexPathsForVisibleRows!, with: .none)
         self.tableView.endUpdates()
+        //self.tableView.reloadData()
     }
     // MARK: - Table view data source
     
@@ -196,15 +219,20 @@ class OrdersListTableViewController: UITableViewController {
     }
     
     
-    @objc func buttonAction(sender: UIButton!) {
+    @objc func datePickerButtonHandler(sender: UIButton!) {
         if sender.tag == 2 {
             let formatter = DateFormatter()
             formatter.dateFormat = "dd.MM.yy"
             let datepicker = self.view.viewWithTag(3) as! UIDatePicker
             currentDate = formatter.string(from: datepicker.date)
             self.datePickerButton.title = currentDate
+            //reset orders array
+            orders = []
+            //load new data from server according to new date chosen
+            FBObservers.setValueListener(sender: self)
             
-            //Allow to select cells in table, while interacting with DatePicker
+            
+            //Allow to select cells in table, after interacting with DatePicker
             self.tableView.allowsSelection = true
             self.view.viewWithTag(1)?.removeFromSuperview()
         }

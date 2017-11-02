@@ -178,93 +178,180 @@ func GetCurrentDate() -> String{
 
 }
 
-
-
-//Fetch and parse data from Firebase func
-func FetchParseOrdersListFirebase(){
+//handles all FireBase observers list
+//.value
+//.childAdded
+//.childChanged
+class FirebaseObservers
+{
     let ref = Database.database().reference().child("orders")
-    var ordersIDList = [String]()
+    var valueHandler: UInt?
+    var childChangedHandler: UInt?
     
-    //load predefined data
-    //orderInit()
     
-    //lets get full list of orders IDs(order1,order2,....)
-    ref.observe(.value, with: { snapshot in
-        if let orderSnapshots = snapshot.children.allObjects as? [DataSnapshot] {
-            for orderSnap in orderSnapshots
-            {
-                ordersIDList.append(orderSnap.key)
-            }
-        }
+    
+    //handles .value event observer for Firbase
+    //-sender: VC, who calls func
+    func setValueListener(sender: NSObject)
+    {
         
-        //lets get data from orders records
-        for ordersCount in 0...(ordersIDList.count-1){
-            orders.append(Order())
-            ref.child(ordersIDList[ordersCount]).observe(.value, with: { snapshot in
+        if let senderVC = sender as? UITableViewController {
+        var ordersIDList = [String]()
+        var dateSelectedOrderCounter = 0
+            
+        //lets get full list of orders IDs(order1,order2,....)
+        self.ref.observe(.value, with: { snapshot in
+            if let orderSnapshots = snapshot.children.allObjects as? [DataSnapshot] {
+                //reset orders list
+                ordersIDList = [String]()
+                //counter for orders with particular date
+                var dateSelectedOrderCounter = 0
+                
+                for orderSnap in orderSnapshots
+                {
+                    ordersIDList.append(orderSnap.key)
+                }
+            }
+            
+            //init empty array of orders to fill with FireBase data
+
+            
+            //lets get data from orders records
+            for ordersCount in 0...(ordersIDList.count-1){
+                self.ref.child(ordersIDList[ordersCount]).observeSingleEvent(of: .value, with: { snapshot in
+                    //parsing orders data from Firebase one by one
+                    if let nodeSnapshots = snapshot.children.allObjects as? [DataSnapshot] {
+                        let parsedOrder = parseOrder(snapshots: nodeSnapshots)
+
+                        if parsedOrder.orderInfo.orderDate == currentDate{
+                        orders.append(Order())
+                        orders[dateSelectedOrderCounter] = parsedOrder
+                        
+                        
+                        
+                        dateSelectedOrderCounter += 1
+                        }
+                        
+                        //reload new data to tableView
+                        senderVC.tableView?.reloadData()                    }
+                })
+
+            }
+
+        })
+    }
+    }
+    
+    
+    
+    //handles .valueChanged event observer for Firbase
+    //-sender: VC, who calls func
+    func setChildChangedListener(sender: NSObject)
+    {
+
+        if let senderVC = sender as? UITableViewController {
+        
+            childChangedHandler = self.ref.observe(.childChanged, with: { (snapshot: DataSnapshot) in
                 if let nodeSnapshots = snapshot.children.allObjects as? [DataSnapshot] {
+                    let orderNumber = Int(snapshot.key)
                     //print(nodeSnapshots)
                     //parsing orders data from Firebase one by one
-                    for nodeSnap in nodeSnapshots
-                    {
-                        //print(nodeSnap.value)
-                        if let postDict = nodeSnap.value as? Dictionary<String, String> {
-                            
-                            let x = 5
-                            switch nodeSnap.key{
-                                
-                            case "customer":
-                                orders[ordersCount].customer.customerAddress = postDict["customerAddress"]!
-                                orders[ordersCount].customer.customerPhone = postDict["customerPhone"]!
-                                orders[ordersCount].customer.customerName = postDict["customerName"]!
-                                
-                            case "orderinfo":
-                                orders[ordersCount].orderInfo.employeeID = postDict["employeeID"]!
-                                orders[ordersCount].orderInfo.orderDate = postDict["orderDate"]!
-                                orders[ordersCount].orderInfo.orderNumber = postDict["orderNumber"]!
-                                orders[ordersCount].orderInfo.startTime = postDict["startTime"]!
-                                orders[ordersCount].orderInfo.workType = postDict["workType"]!
-                                let status = postDict["orderStatus"]!
-                                switch(status){
-                                    
-                                case "NotStarted":
-                                    orders[ordersCount].orderInfo.orderStatus = .NotStarted
-                                case "Started":
-                                    orders[ordersCount].orderInfo.orderStatus = .Started
-                                case "Delayed":
-                                    orders[ordersCount].orderInfo.orderStatus = .Delayed
-                                case "Completed":
-                                    orders[ordersCount].orderInfo.orderStatus = .Completed
-                                default:
-                                    orders[ordersCount].orderInfo.orderStatus = .NotStarted
-                                }
-                                
-                            case "photoslist":
-                                for index in 0...(postDict.count-1){
-                                    order.photosList.append(postDict["url" + String(index+1)]!)
-                                    
-                                }
-                            case "tasklist":
-                                //order.photosList.status = postDict["description"]!
-                                let x = 4
-                            default:
-                                let x = 4
-                                
-                            }
-                            
-                        }
-                        else{
-                           //let postDict = nodeSnap.value as? String{
-                                print(nodeSnap.key)
-                             let x = 4
-                            
-                        }
-                    }
+
                     
+//                let artist = snapshot.childSnapshot(forPath: "artist").value as! String
+//                let title = snapshot.childSnapshot(forPath: "title").value as! String
+//                let picture = snapshot.childSnapshot(forPath: "picture").value as! String
+//                let vidURL = snapshot.childSnapshot(forPath: "url").value as! String
+//
+//                print("\(artist) \n\(title) \n\(picture) \n\(vidURL)")
+//
+//                let youtubeURL = NSURL(string: vidURL)
+//                let youtubeRequest = NSMutableURLRequest(url: youtubeURL! as URL)
+//                youtubeRequest.setValue("https://www.youtube.com", forHTTPHeaderField: "Referer")
+//
+//                let p1 = AddCell(imageURL: picture ,
+//                                 videoURL: youtubeRequest,
+//                                 songTitle: title,
+//                                 artistName: artist)
+//
+//                self.addCells.append(p1)
+                let x = 3
                 }
-                
             })
+
+    }
+}
+    
+    //remove particular observer
+    func removeValueListener(handler: UInt?){
+        if handler != nil{
+            ref.removeObserver(withHandle: handler!)
         }
-        
-    })
+    }
+    
+    //remove all
+    func removeAllObservers(){
+    removeAllObservers()
+    }
+    
+    
+    
 }
 
+func parseOrder(snapshots: [DataSnapshot]) -> Order{
+
+    order = Order()
+    for nodeSnap in snapshots{
+    if let postDict = nodeSnap.value as? Dictionary<String, String> {
+        
+        switch nodeSnap.key{
+            
+        case "customer":
+            order.customer.customerAddress = postDict["customerAddress"]!
+            order.customer.customerPhone = postDict["customerPhone"]!
+            order.customer.customerName = postDict["customerName"]!
+            
+        case "orderinfo":
+            order.orderInfo.employeeID = postDict["employeeID"]!
+            order.orderInfo.orderDate = postDict["orderDate"]!
+            order.orderInfo.orderNumber = postDict["orderNumber"]!
+            order.orderInfo.startTime = postDict["startTime"]!
+            order.orderInfo.workType = postDict["workType"]!
+            let status = postDict["orderStatus"]!
+            switch(status){
+                
+            case "NotStarted":
+                order.orderInfo.orderStatus = .NotStarted
+            case "Started":
+                order.orderInfo.orderStatus = .Started
+            case "Delayed":
+                order.orderInfo.orderStatus = .Delayed
+            case "Completed":
+                order.orderInfo.orderStatus = .Completed
+            default:
+                order.orderInfo.orderStatus = .NotStarted
+            }
+            
+        case "photoslist":
+            for index in 0...(postDict.count-1){
+                order.photosList.append(postDict["url" + String(index+1)]!)
+                
+            }
+        case "tasklist":
+            //order.photosList.status = postDict["description"]!
+            let x = 4
+        default:
+            let x = 4
+            
+        }
+        
+    }
+    else{
+        //let postDict = nodeSnap.value as? String{
+        //print(nodeSnap.key)
+        let x = 4
+        
+    }
+}
+    return order
+}
