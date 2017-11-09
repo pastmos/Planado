@@ -53,7 +53,12 @@ class LoginViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "LoginToOrderListSeague" {
-        }
+                if let destVC = segue.destination as? UINavigationController{
+                    if let targetVC = destVC.topViewController as? OrdersListTableViewController{
+                    targetVC.employeeID = self.loginText.text!
+                    }
+                }
+            }
     }
     
     override func viewWillDisappear(_ animated: Bool) {

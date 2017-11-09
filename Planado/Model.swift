@@ -192,7 +192,7 @@ class FirebaseObservers
     
     //handles .value event observer for Firbase
     //-sender: VC, who calls func
-    func setValueListener(sender: NSObject)
+    func setValueListener(sender: NSObject, currentEmployee: String)
     {
         
         if let senderVC = sender as? UITableViewController {
@@ -222,15 +222,14 @@ class FirebaseObservers
                     //parsing orders data from Firebase one by one
                     if let nodeSnapshots = snapshot.children.allObjects as? [DataSnapshot] {
                         let parsedOrder = parseOrder(snapshots: nodeSnapshots)
-
-                        if parsedOrder.orderInfo.orderDate == currentDate{
-                        orders.append(Order())
-                        orders[dateSelectedOrderCounter] = parsedOrder
                         
+                            if (parsedOrder.orderInfo.orderDate == currentDate) && (parsedOrder.orderInfo.employeeID == currentEmployee){
+                                orders.append(Order())
+                                orders[dateSelectedOrderCounter] = parsedOrder
                         
+                                dateSelectedOrderCounter += 1
+                            }
                         
-                        dateSelectedOrderCounter += 1
-                        }
                         
                         //reload new data to tableView
                         senderVC.tableView?.reloadData()                    }
@@ -256,7 +255,7 @@ class FirebaseObservers
                     
                     let parsedOrder = parseOrder(snapshots: nodeSnapshots)
                         for orderNum in 0..<orders.count{
-                            if(orders[orderNum].orderInfo.orderNumber == parsedOrder.orderInfo.orderNumber){
+                            if orders[orderNum].orderInfo.orderNumber == parsedOrder.orderInfo.orderNumber{
                                 orders[orderNum] = parsedOrder
                                 
                                 //reload particular row that has changed

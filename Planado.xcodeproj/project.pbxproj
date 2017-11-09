@@ -110,8 +110,8 @@
 			isa = PBXGroup;
 			children = (
 				CE66EEFC1F9E907F00D0C9B8 /* Planado.entitlements */,
-				CE6E2EC01F7AAF7B004CF67F /* LoginViewController.swift */,
 				CE6E2EC21F7AAF7B004CF67F /* Main.storyboard */,
+				CE6E2EC01F7AAF7B004CF67F /* LoginViewController.swift */,
 				CEBA80A41F9105F400A1D343 /* TabOrderViewController.swift */,
 				CEBA80A61F91067500A1D343 /* TabDoneViewController.swift */,
 				CEBA80A81F9106B200A1D343 /* TabProcessViewController.swift */,

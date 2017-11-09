@@ -17,6 +17,7 @@ import FirebaseDatabase
 class OrdersListTableViewController: UITableViewController {
 
     var tappedIndex: Int!
+    var employeeID: String!
     var FBObservers = FirebaseObservers()
     
     @IBOutlet weak var datePickerButton: UIBarButtonItem!
@@ -132,7 +133,7 @@ class OrdersListTableViewController: UITableViewController {
         self.datePickerButton.title = currentDate
         
         //get full list data from FireBase
-        FBObservers.setValueListener(sender: self)
+        FBObservers.setValueListener(sender: self, currentEmployee: employeeID)
         FBObservers.setChildChangedListener(sender: self)
         
 //        let ref = Database.database().reference().child("orders")
@@ -229,7 +230,7 @@ class OrdersListTableViewController: UITableViewController {
             //reset orders array
             orders = []
             //load new data from server according to new date chosen
-            FBObservers.setValueListener(sender: self)
+            FBObservers.setValueListener(sender: self, currentEmployee: employeeID)
             
             
             //Allow to select cells in table, after interacting with DatePicker
