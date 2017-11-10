@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 
 
@@ -26,7 +27,8 @@ class TabOrderViewController: UIViewController {
     
     var tappedCellOrder: Order = Order()
     var tappedIndex: Int!
-
+    var ref = Database.database().reference()
+    
     //Actions
     @IBAction func callButtonPressed(_ sender: BorderedButton) {
         let phone = String(describing: tappedCellOrder.customer.customerPhone)
@@ -36,6 +38,8 @@ class TabOrderViewController: UIViewController {
 
     @IBAction func startButtonPressed(_ sender: BorderedButton) {
         
+        let orderID = String(ordersDictList[tappedIndex]! + 1)
+        
         switch tappedCellOrder.orderInfo.orderStatus{
             
         case .NotStarted:
@@ -43,12 +47,14 @@ class TabOrderViewController: UIViewController {
             orderAccomplishedStatus.textColor = .orange
             startButton.setTitle("Остановить", for: .normal)
             tappedCellOrder.orderInfo.orderStatus = OrderStatusState.Started
+            self.ref.child("orders").child(orderID).child("orderinfo").updateChildValues(["orderStatus": "Started"])
             
         case .Started:
             orderAccomplishedStatus.text = "Остановлен"
             orderAccomplishedStatus.textColor = .red
             startButton.setTitle("Продолжить", for: .normal)
             tappedCellOrder.orderInfo.orderStatus = OrderStatusState.Delayed
+            self.ref.child("orders").child(orderID).child("orderinfo").updateChildValues(["orderStatus": "Delayed"])
         
         case .Delayed:
             orderAccomplishedStatus.text = "Выполняется"
@@ -56,7 +62,8 @@ class TabOrderViewController: UIViewController {
             startButton.setTitle("Остановить", for: .normal)
             //startButton.setTitleColor(.orange, for: .normal)
             tappedCellOrder.orderInfo.orderStatus = OrderStatusState.Started
-        
+            self.ref.child("orders").child(orderID).child("orderinfo").updateChildValues(["orderStatus": "Started"])
+            
         case .Completed:
             // create the alert
             let alert = UIAlertController(title: "Внимание!", message: "Данный наряд уже выполнен", preferredStyle: UIAlertControllerStyle.alert)
@@ -72,6 +79,8 @@ class TabOrderViewController: UIViewController {
     }
     
     @IBAction func finishButtonPressed(_ sender: BorderedButton) {
+        
+        let orderID = String(ordersDictList[tappedIndex]! + 1)
         
         //If the order is not completed or hasnt been started
         switch self.tappedCellOrder.orderInfo.orderStatus{
@@ -93,6 +102,7 @@ class TabOrderViewController: UIViewController {
             self?.orderAccomplishedStatus.text = "Выполнен"
             self?.orderAccomplishedStatus.textColor = .green
             self?.tappedCellOrder.orderInfo.orderStatus = OrderStatusState.Completed
+            self?.ref.child("orders").child(orderID).child("orderinfo").updateChildValues(["orderStatus": "Completed"])
             }))
         alert.addAction(UIAlertAction(title: "Отмена", style: UIAlertActionStyle.cancel, handler: nil))
         

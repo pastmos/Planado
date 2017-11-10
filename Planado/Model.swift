@@ -15,19 +15,16 @@ var selectedOrder = Order()
 var order = Order()
 
 
+
+
+
+
 var customer = Customer(customerName: "Аксенов Н.П.", customerAddress: "ул.Земляной Вал, дом 45, стр.1", customerPhone: "+7(926)4566578")
 var orderInfo = OrderInfo(employeeID: "passt@yandex.ru", startTime: "17:30 - 18:50", workType: "Прокладка кабеля и установка роутера клиента", orderNumber: "874", orderDate: "26.10.17", orderStatus: .NotStarted)
 var photosList : [String] = ["http://192.0.0.1","http://192.0.0.2"]
 var task1 = Task(description: "Поблагодарить клиента", status: "false")
 var task2 = Task(description: "Сделать фотографии готовой работы", status: "false")
 var taskList : [Task] = [task1, task2]
-
-//var order = Order(customer: customer,orderInfo: orderInfo, photosList: photosList,taskList: taskList)
-
-//var orders: [Order] = ordersData
-//
-//let ordersData = [ Order(orderNumber: "34", time:"11:00 - 12:00", workType:"Замена роутера на оборудование абонента", customerName: "Иванов И.И.", customerAddress: "Москва, Полянка,2", customerPhone: "+7(905)7264547"), Order(orderNumber: "35654", time:"12:00 - 13:00", workType:"Подключение ТВ", customerName: "Петров И.И.", customerAddress: "Москва, Земляной вал,13, стр.6/1", customerPhone: "+7(903)1245506"), Order(orderNumber: "87456", time:"13:00 - 14:00", workType:"Прокладка провода", customerName: "Сидоров И.И.", customerAddress: "Москва, мал.Никитская,21", customerPhone: "+7(903)1245506") , Order(orderNumber: "85", time:"14:00 - 15:00", workType:"Настройка роутера", customerName: "Панов И.И.", customerAddress: "Москва, МЖК,533, кв.82, сразу за Каштановой аллеей повернуть направо, нумерация подъездов обратная!", customerPhone: "+7(903)1245506"), Order(orderNumber: "74", time:"15:00 - 16:00", workType:"Настройка WiFi", customerName: "Зейдельбаум И.И.", customerAddress: "Москва, Ленинградский просп.,43б вход со двора, после электроподстанции повернуть во двор ", customerPhone: "+7(903)1245506")]
-
 
 var currentDateForOrdersList = Date()
 var currentDate : String!
@@ -38,10 +35,8 @@ let notStartedImage = UIImage(named: "not_in_progress64.png")
 let delayedImage = UIImage(named: "delayed64.png")
 let completedImage = UIImage(named: "completed64.png")
 
-func orderInit()
-{
-    orders.append(order)
-}
+//orders dictionary, where first Int is order number in Firebase and the second one is appropriate number in local orders array
+var ordersDictList = [Int:Int]()
 
 enum OrderStatusState {
     case NotStarted
@@ -188,17 +183,16 @@ class FirebaseObservers
     var valueHandler: UInt?
     var childChangedHandler: UInt?
     
-    
-    
     //handles .value event observer for Firbase
     //-sender: VC, who calls func
     func setValueListener(sender: NSObject, currentEmployee: String)
     {
-        
+
         if let senderVC = sender as? UITableViewController {
         var ordersIDList = [String]()
+        ordersDictList = [:]
         var dateSelectedOrderCounter = 0
-            
+
         //lets get full list of orders IDs(order1,order2,....)
         self.ref.observeSingleEvent(of: .value, with: { snapshot in
             if let orderSnapshots = snapshot.children.allObjects as? [DataSnapshot] {
@@ -226,7 +220,9 @@ class FirebaseObservers
                             if (parsedOrder.orderInfo.orderDate == currentDate) && (parsedOrder.orderInfo.employeeID == currentEmployee){
                                 orders.append(Order())
                                 orders[dateSelectedOrderCounter] = parsedOrder
-                        
+                                
+                                //filling dict Firebase orders list -> selected by date and employee local orders list
+                                ordersDictList[dateSelectedOrderCounter] = ordersCount
                                 dateSelectedOrderCounter += 1
                             }
                         
@@ -291,59 +287,68 @@ func reloadRowInSection( row: Int, section: Int, animation: UITableViewRowAnimat
 }
 
 func parseOrder(snapshots: [DataSnapshot]) -> Order{
-
+    
     order = Order()
+    
     for nodeSnap in snapshots{
-    if let postDict = nodeSnap.value as? Dictionary<String, String> {
         
-        switch nodeSnap.key{
-            
-        case "customer":
-            order.customer.customerAddress = postDict["customerAddress"]!
-            order.customer.customerPhone = postDict["customerPhone"]!
-            order.customer.customerName = postDict["customerName"]!
-            
-        case "orderinfo":
-            order.orderInfo.employeeID = postDict["employeeID"]!
-            order.orderInfo.orderDate = postDict["orderDate"]!
-            order.orderInfo.orderNumber = postDict["orderNumber"]!
-            order.orderInfo.startTime = postDict["startTime"]!
-            order.orderInfo.workType = postDict["workType"]!
-            let status = postDict["orderStatus"]!
-            switch(status){
+        if let postDict = nodeSnap.value as? Dictionary<String, String> {
+            //print(nodeSnap.key)
+            switch nodeSnap.key{
                 
-            case "NotStarted":
-                order.orderInfo.orderStatus = .NotStarted
-            case "Started":
-                order.orderInfo.orderStatus = .Started
-            case "Delayed":
-                order.orderInfo.orderStatus = .Delayed
-            case "Completed":
-                order.orderInfo.orderStatus = .Completed
+            case "customer":
+                order.customer.customerAddress = postDict["customerAddress"]!
+                order.customer.customerPhone = postDict["customerPhone"]!
+                order.customer.customerName = postDict["customerName"]!
+                
+            case "orderinfo":
+                order.orderInfo.employeeID = postDict["employeeID"]!
+                order.orderInfo.orderDate = postDict["orderDate"]!
+                order.orderInfo.orderNumber = postDict["orderNumber"]!
+                order.orderInfo.startTime = postDict["startTime"]!
+                order.orderInfo.workType = postDict["workType"]!
+                let status = postDict["orderStatus"]!
+                switch(status){
+                    
+                case "NotStarted":
+                    order.orderInfo.orderStatus = .NotStarted
+                case "Started":
+                    order.orderInfo.orderStatus = .Started
+                case "Delayed":
+                    order.orderInfo.orderStatus = .Delayed
+                case "Completed":
+                    order.orderInfo.orderStatus = .Completed
+                default:
+                    order.orderInfo.orderStatus = .NotStarted
+                }
+                
+            case "photoslist":
+                for index in 0...(postDict.count-1){
+                    order.photosList.append(postDict["url" + String(index+1)]! )
+                    
+                }
+                
             default:
-                order.orderInfo.orderStatus = .NotStarted
-            }
-            
-        case "photoslist":
-            for index in 0...(postDict.count-1){
-                order.photosList.append(postDict["url" + String(index+1)]!)
+                break
                 
             }
-        case "tasklist":
-            //order.photosList.status = postDict["description"]!
-            let x = 4
-        default:
-            let x = 4
-            
         }
         
-    }
-    else{
-        //let postDict = nodeSnap.value as? String{
-        //print(nodeSnap.key)
-        let x = 4
+        if nodeSnap.key == "tasklist"
+        {
+            let nodeSnapshots = nodeSnap.children.allObjects as! [DataSnapshot]
+            for index in 0..<nodeSnapshots.count{
+                if let snapDict = nodeSnapshots[index].value as? Dictionary<String, String> {
+                    //declare task here unless append will use the same task variable because of it's class reference type, and all task var changes'll be applied to all array members
+                    let task = Task()
+                    task.description = snapDict["description"]!
+                    task.status = snapDict["status"]!
+                    order.taskList.append(task)
+                }
+            }
+        }
+        
         
     }
-}
     return order
 }

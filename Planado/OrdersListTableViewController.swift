@@ -57,7 +57,7 @@ class OrdersListTableViewController: UITableViewController {
         let format = DateFormatter()
         format.dateFormat = "dd.MM.yy"
         let date = format.date(from: currentDate)
-        let todayDate = format.date(from: GetCurrentDate())
+        //let todayDate = format.date(from: GetCurrentDate())
         datePicker.date = date!
         datePicker.minimumDate = Calendar.current.date(byAdding: .month, value: -1, to: Date())
         datePicker.maximumDate = Calendar.current.date(byAdding: .month, value: 12, to: Date())

@@ -1,0 +1,175 @@
+{
+  "orders" : [ null, {
+    "customer" : {
+      "customerAddress" : "Москва, МЖК,533, кв.82, сразу за Каштановой аллеей повернуть направо, нумерация подъездов обратная!",
+      "customerName" : "Панов С.С.",
+      "customerPhone" : "+7(903)1409099"
+    },
+    "orderinfo" : {
+      "employeeID" : "passt@yandex.ru",
+      "orderDate" : "03.11.17",
+      "orderNumber" : "34",
+      "orderStatus" : "NotStarted",
+      "startTime" : "11:00 - 12:00",
+      "workType" : "Замена роутера на оборудование абонента и настройка ТВ"
+    },
+    "photoslist" : {
+      "url1" : "http://",
+      "url2" : "http://192.168.0.1"
+    },
+    "tasklist" : [ null, {
+      "description" : "Поблагодарить",
+      "status" : "true"
+    }, {
+      "description" : "Сфотографировать работу",
+      "status" : "true"
+    } ]
+  }, {
+    "customer" : {
+      "customerAddress" : "Москва, Ленинградский просп.,43б вход со двора, после электроподстанции повернуть во двор ",
+      "customerName" : "Иванов И.И.",
+      "customerPhone" : "+7(903)1245506"
+    },
+    "orderinfo" : {
+      "employeeID" : "pastspam@yandex.ru",
+      "orderDate" : "02.11.17",
+      "orderNumber" : "35654",
+      "orderStatus" : "NotStarted",
+      "startTime" : "13:00 - 14:00",
+      "workType" : "Подключение ТВ"
+    },
+    "photoslist" : {
+      "url1" : "http://192.0.0.0"
+    },
+    "tasklist" : [ null, {
+      "description" : "Предложить рекламные проспекты",
+      "status" : "false"
+    }, {
+      "description" : "Убрать за собой",
+      "status" : "false"
+    }, null, {
+      "description" : "Сделать фото работы в трех ракурсах",
+      "status" : "false"
+    } ]
+  }, {
+    "customer" : {
+      "customerAddress" : "Москва, мал.Никитская,21",
+      "customerName" : "Зейдельбаум И.И.",
+      "customerPhone" : "+7(905)4325687"
+    },
+    "orderinfo" : {
+      "employeeID" : "passt@yandex.ru",
+      "orderDate" : "03.11.17",
+      "orderNumber" : "74",
+      "orderStatus" : "NotStarted",
+      "startTime" : "14:00 - 15:00",
+      "workType" : "Настройка роутера"
+    },
+    "photoslist" : {
+      "url1" : "https://"
+    },
+    "tasklist" : [ null, {
+      "description" : "Проверить качество монтажа",
+      "status" : "false"
+    }, {
+      "description" : "Сделать 2 фотографии",
+      "status" : "false"
+    } ]
+  }, {
+    "customer" : {
+      "customerAddress" : "Москва, Никольский проезд,42/1",
+      "customerName" : "Афанасьев Ю.И.",
+      "customerPhone" : "+7(903)1244667"
+    },
+    "orderinfo" : {
+      "employeeID" : "passt@yandex.ru",
+      "orderDate" : "03.11.17",
+      "orderNumber" : "777",
+      "orderStatus" : "NotStarted",
+      "startTime" : "15:00 - 16:00",
+      "workType" : "Монтаж роутера на стену"
+    },
+    "photoslist" : {
+      "url1" : "https://"
+    },
+    "tasklist" : [ null, {
+      "description" : "Проверить качество монтажа",
+      "status" : "false"
+    }, {
+      "description" : "Сделать 2 фотографии",
+      "status" : "false"
+    } ]
+  }, {
+    "customer" : {
+      "customerAddress" : "Москва, Никольский проезд,42/1",
+      "customerName" : "Захариков В.В.",
+      "customerPhone" : "+7(903)1249306"
+    },
+    "orderinfo" : {
+      "employeeID" : "pastspam@yandex.ru",
+      "orderDate" : "04.11.17",
+      "orderNumber" : "117",
+      "orderStatus" : "NotStarted",
+      "startTime" : "15:00 - 16:00",
+      "workType" : "Монтаж оборудования"
+    },
+    "photoslist" : {
+      "url1" : "https://"
+    },
+    "tasklist" : [ null, {
+      "description" : "Проверить качество монтажа",
+      "status" : "false"
+    }, {
+      "description" : "Сделать 2 фотографии",
+      "status" : "false"
+    } ]
+  }, {
+    "customer" : {
+      "customerAddress" : "Москва, Никольский проезд,42/1",
+      "customerName" : "Захаревич В.В.",
+      "customerPhone" : "+7(903)1249306"
+    },
+    "orderinfo" : {
+      "employeeID" : "pastspam@yandex.ru",
+      "orderDate" : "04.11.17",
+      "orderNumber" : "667",
+      "orderStatus" : "NotStarted",
+      "startTime" : "15:00 - 16:00",
+      "workType" : "Проверка работы WiFi"
+    },
+    "photoslist" : {
+      "url1" : "https://"
+    },
+    "tasklist" : [ null, {
+      "description" : "Проверить качество монтажа",
+      "status" : "false"
+    }, {
+      "description" : "Сделать 2 фотографии",
+      "status" : "false"
+    } ]
+  }, {
+    "customer" : {
+      "customerAddress" : "Москва, Никольский проезд,42/1",
+      "customerName" : "Захаренко В.В.",
+      "customerPhone" : "+7(903)1249306"
+    },
+    "orderinfo" : {
+      "employeeID" : "passt@yandex.ru",
+      "orderDate" : "04.11.17",
+      "orderNumber" : "6347",
+      "orderStatus" : "NotStarted",
+      "startTime" : "15:00 - 16:00",
+      "workType" : "Проверка работы WiFi"
+    },
+    "photoslist" : {
+      "url1" : "https://"
+    },
+    "tasklist" : [ null, {
+      "description" : "Проверить качество монтажа",
+      "status" : "false"
+    }, {
+      "description" : "Сделать 2 фотографии",
+      "status" : "false"
+    } ]
+  } ]
+}

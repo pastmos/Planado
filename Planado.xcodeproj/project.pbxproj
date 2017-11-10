@@ -32,6 +32,9 @@
 		CEBA80A71F91067500A1D343 /* TabDoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBA80A61F91067500A1D343 /* TabDoneViewController.swift */; };
 		CEBA80A91F9106B200A1D343 /* TabProcessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBA80A81F9106B200A1D343 /* TabProcessViewController.swift */; };
 		CEBA80AB1F91114900A1D343 /* delayed64.png in Resources */ = {isa = PBXBuildFile; fileRef = CEBA80AA1F91114700A1D343 /* delayed64.png */; };
+		CEC1EE871FB505A100E29D71 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1EE861FB505A100E29D71 /* TaskCell.swift */; };
+		CEC1EE8A1FB52B5B00E29D71 /* Uncompleted.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC1EE881FB52B5A00E29D71 /* Uncompleted.png */; };
+		CEC1EE8B1FB52B5B00E29D71 /* Completed.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC1EE891FB52B5B00E29D71 /* Completed.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +68,9 @@
 		CEBA80A61F91067500A1D343 /* TabDoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabDoneViewController.swift; sourceTree = "<group>"; };
 		CEBA80A81F9106B200A1D343 /* TabProcessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabProcessViewController.swift; sourceTree = "<group>"; };
 		CEBA80AA1F91114700A1D343 /* delayed64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = delayed64.png; sourceTree = "<group>"; };
+		CEC1EE861FB505A100E29D71 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
+		CEC1EE881FB52B5A00E29D71 /* Uncompleted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Uncompleted.png; sourceTree = "<group>"; };
+		CEC1EE891FB52B5B00E29D71 /* Completed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Completed.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +122,7 @@
 				CEBA80A61F91067500A1D343 /* TabDoneViewController.swift */,
 				CEBA80A81F9106B200A1D343 /* TabProcessViewController.swift */,
 				CE1602E21F83281F00A9E39B /* OrderCell.swift */,
+				CEC1EE861FB505A100E29D71 /* TaskCell.swift */,
 				CE1602DE1F82DE8300A9E39B /* OrdersListTableViewController.swift */,
 				CE6E9A1C1F7C760200967923 /* Model.swift */,
 				CE6E2ED01F7ABB28004CF67F /* Supporting Files */,
@@ -138,6 +145,8 @@
 		CE6E9A151F7C70DD00967923 /* Pictures */ = {
 			isa = PBXGroup;
 			children = (
+				CEC1EE891FB52B5B00E29D71 /* Completed.png */,
+				CEC1EE881FB52B5A00E29D71 /* Uncompleted.png */,
 				CE66EEF81F9BECEE00D0C9B8 /* completed64.png */,
 				CEBA80AA1F91114700A1D343 /* delayed64.png */,
 				CEBA80A21F91000A00A1D343 /* not_in_progress64.png */,
@@ -237,8 +246,10 @@
 				CE6E2EC91F7AAF7B004CF67F /* LaunchScreen.storyboard in Resources */,
 				CE66EEF91F9BECEE00D0C9B8 /* completed64.png in Resources */,
 				CE5029601F8404E10091381C /* bell4x.png in Resources */,
+				CEC1EE8B1FB52B5B00E29D71 /* Completed.png in Resources */,
 				CE5029611F8404E10091381C /* settings4x.png in Resources */,
 				CE6E9A1A1F7C70FA00967923 /* logo.png in Resources */,
+				CEC1EE8A1FB52B5B00E29D71 /* Uncompleted.png in Resources */,
 				CE6E2EC61F7AAF7B004CF67F /* Assets.xcassets in Resources */,
 				CE6E9A1B1F7C70FA00967923 /* logosquare.png in Resources */,
 				CEBA80A11F90FFA300A1D343 /* in_progress64.png in Resources */,
@@ -323,6 +334,7 @@
 				CE6E2EC11F7AAF7B004CF67F /* LoginViewController.swift in Sources */,
 				CE6E2EBF1F7AAF7B004CF67F /* AppDelegate.swift in Sources */,
 				CEBA80A91F9106B200A1D343 /* TabProcessViewController.swift in Sources */,
+				CEC1EE871FB505A100E29D71 /* TaskCell.swift in Sources */,
 				CEBA80A51F9105F400A1D343 /* TabOrderViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
